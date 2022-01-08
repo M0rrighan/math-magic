@@ -9,9 +9,9 @@
 
 ## Screenshots
 ### Desktop
-![screenshot](./)
+![screenshot](./MathMagic-d.png)
 ### Mobile
-![screenshot](./)
+![screenshot](./MathMagic-m.png)
 ## Built With
 
 - HTML

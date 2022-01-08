@@ -1,27 +1,80 @@
-body {
+*,
+*::after,
+*::before {
+  padding: 0;
   margin: 0;
-  font-family:
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    'Roboto',
-    'Oxygen',
-    'Ubuntu',
-    'Cantarell',
-    'Fira Sans',
-    'Droid Sans',
-    'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-code {
-  font-family:
-    source-code-pro,
-    Menlo,
-    Monaco,
-    Consolas,
-    'Courier New',
-    monospace;
+.calc-container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.calculator {
+  max-width: 35rem;
+  width: 80%;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.display {
+  width: 100%;
+  background-color: hsl(0, 0%, 20%);
+  color: hsl(0, 0%, 90%);
+  text-align: right;
+  padding: 1em;
+  padding-right: 0.5em;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.btn {
+  display: flex;
+  justify-content: center;
+  color: hsl(0, 0%, 10%);
+  background-color: hsl(0, 0%, 90%);
+  font-size: inherit;
+  font-weight: inherit;
+  padding: 1.25em;
+  border: 1px solid hsl(0, 0%, 80%);
+}
+
+.btn:nth-child(4n),
+.btn:last-child {
+  background-color: hsl(40, 100%, 40%);
+  border: 1px solid hsl(0, 0%, 90%);
+}
+
+.btn:nth-last-child(3) {
+  grid-column: 1 / span 2;
+}
+
+/*
+    ============================================
+    ******* MEDIA QUERY min-width 480px *******
+    ============================================
+*/
+@media only screen and (min-width: 30rem) {
+  .calculator {
+    font-size: 1.5rem;
+  }
+}
+
+/*
+    ============================================
+    ******* MEDIA QUERY max-width 292px *******
+    ============================================
+*/
+@media only screen and (max-width: 18.25rem) {
+  .calculator {
+    font-size: 0.5rem;
+  }
 }
