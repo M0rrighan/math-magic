@@ -1,6 +1,5 @@
 /* eslint-disable no-useless-constructor */
 /* eslint-disable react/prefer-stateless-function */
-// eslint-disable-line import/no-extraneous-dependencies
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
