@@ -1,40 +1,35 @@
-/* eslint-disable react/prefer-stateless-function */
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import Display from './Display';
 import Buttons from './Buttons';
 import calculate from '../logic/calculate';
 
-export default class Calculator extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
+const Calculator = () => {
+  const [state, setState] = useState(
+    {
       total: null,
       next: null,
       operation: null,
-    };
+    },
+  );
 
-    this.updateState = this.updateState.bind(this);
+  const updateState = (btnName) => {
+    setState(() => calculate(state, btnName));
+  };
+
+  const { total, next, operation } = state;
+  let resultString = '';
+  if (total) {
+    resultString = `${total} ${operation || ''} ${next || ''}`;
+  } else if (next) {
+    resultString = `${next} ${operation || ''}`;
   }
 
-  updateState(btnName) {
-    const { total, next, operation } = this.state;
-    this.setState(() => calculate({ total, next, operation }, btnName));
-  }
+  return (
+    <div className="calculator">
+      <Display resultString={resultString || 0} />
+      <Buttons updateCalculator={updateState} />
+    </div>
+  );
+};
 
-  render() {
-    const { total, next, operation } = this.state;
-    let resultString = '';
-    if (total) {
-      resultString = `${total} ${operation || ''} ${next || ''}`;
-    } else if (next) {
-      resultString = `${next} ${operation || ''}`;
-    }
-
-    return (
-      <div className="calculator">
-        <Display resultString={resultString || 0} />
-        <Buttons updateCalculator={this.updateState} />
-      </div>
-    );
-  }
-}
+export default Calculator;
