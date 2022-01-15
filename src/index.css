@@ -31,8 +31,8 @@
 
 .display {
   width: 100%;
-  background-color: hsl(0, 0%, 20%);
-  color: hsl(0, 0%, 90%);
+  background-color: hsl(0deg 0% 20%);
+  color: hsl(0deg 0% 90%);
   text-align: right;
   padding: 1em;
   padding-right: 0.5em;
@@ -46,18 +46,18 @@
 .btn {
   display: flex;
   justify-content: center;
-  color: hsl(0, 0%, 10%);
-  background-color: hsl(0, 0%, 90%);
+  color: hsl(0deg 0% 10%);
+  background-color: hsl(0deg 0% 90%);
   font-size: inherit;
   font-weight: inherit;
   padding: 1.25em;
-  border: 1px solid hsl(0, 0%, 80%);
+  border: 1px solid hsl(0deg 0% 80%);
 }
 
 .btn:nth-child(4n),
 .btn:last-child {
-  background-color: hsl(40, 100%, 40%);
-  border: 1px solid hsl(0, 0%, 90%);
+  background-color: hsl(40deg 100% 40%);
+  border: 1px solid hsl(0deg 0% 90%);
 }
 
 .btn:nth-last-child(3) {
@@ -66,7 +66,7 @@
 
 .active {
   text-decoration: underline;
-  color: hsl(0, 0%, 20%);
+  color: hsl(0deg 0% 20%);
 }
 
 /*
