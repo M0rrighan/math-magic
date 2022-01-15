@@ -25,9 +25,12 @@ const Calculator = () => {
   }
 
   return (
-    <div className="calculator">
-      <Display resultString={resultString || 0} />
-      <Buttons updateCalculator={updateState} />
+    <div className="container">
+      <h2>Let&rsquo;s do some math!</h2>
+      <div className="calculator">
+        <Display resultString={resultString || 0} />
+        <Buttons updateCalculator={updateState} />
+      </div>
     </div>
   );
 };
